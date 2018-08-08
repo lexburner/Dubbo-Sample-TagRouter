@@ -1,10 +1,10 @@
 package moe.cnkirito.provider;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.dubbo.rpc.RpcContext;
 import moe.cnkirito.api.BookApi;
 import moe.cnkirito.api.GoodsApi;
-import org.apache.dubbo.config.annotation.Reference;
-import org.apache.dubbo.config.annotation.Service;
-import org.apache.dubbo.rpc.RpcContext;
 
 /**
  * @author 徐靖峰[OF2938]
