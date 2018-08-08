@@ -1,0 +1,6 @@
+server:
+  port: 8094
+
+dubbo:
+  provider.tag:
+  protocol.port: 20894

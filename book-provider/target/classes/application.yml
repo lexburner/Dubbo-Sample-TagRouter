@@ -1,0 +1,6 @@
+server:
+  port: 8081
+
+dubbo:
+  provider.tag: yellow
+  protocol.port: 20881
