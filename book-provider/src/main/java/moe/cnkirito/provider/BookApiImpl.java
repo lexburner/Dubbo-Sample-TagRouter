@@ -7,8 +7,8 @@ import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.rpc.RpcContext;
 
 /**
- * @author 徐靖峰[OF2938]
- * Date 2018-07-31
+ * @author kirito.moe@foxmail.com
+ * Date 2018-08-03
  */
 @Service()
 public class BookApiImpl implements BookApi {
@@ -20,6 +20,7 @@ public class BookApiImpl implements BookApi {
     public void sale() {
         System.out.println(RpcContext.getContext().getAttachments());
         System.out.println("hello book");
+        // need to start Application goods-provider
         goodsApi.write();
     }
 

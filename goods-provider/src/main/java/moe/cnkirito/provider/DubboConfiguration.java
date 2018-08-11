@@ -1,6 +1,7 @@
 package moe.cnkirito.provider;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.common.Constants;
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.ProviderConfig;
@@ -9,6 +10,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author kirito.moe@foxmail.com
+ * Date 2018-08-03
+ */
 @Configuration
 @Slf4j
 public class DubboConfiguration {
@@ -18,6 +26,10 @@ public class DubboConfiguration {
         ApplicationConfig applicationConfig = new ApplicationConfig();
         applicationConfig.setName("provider-goods");
         applicationConfig.setQosEnable(false);
+        // instruct tag router
+        Map<String,String> parameters = new HashMap<>();
+        parameters.put(Constants.ROUTER_KEY, "tag");
+        applicationConfig.setParameters(parameters);
         return applicationConfig;
     }
 

@@ -5,8 +5,8 @@ import org.apache.dubbo.config.annotation.Service;
 import org.apache.dubbo.rpc.RpcContext;
 
 /**
- * @author 徐靖峰[OF2938]
- * Date 2018-08-07
+ * @author kirito.moe@foxmail.com
+ * Date 2018-08-03
  */
 @Service
 public class GoodsApiImpl implements GoodsApi {

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author 徐靖峰[OF2938]
- * Date 2018-07-31
+ * @author kirito.moe@foxmail.com
+ * Date 2018-08-03
  */
 @RestController
 public class BookConsumer {
@@ -18,7 +18,8 @@ public class BookConsumer {
 
     @RequestMapping("/book")
     public String book() {
-        RpcContext.getContext().setAttachment("request.tag","yellow");
+        RpcContext.getContext().setAttachment("request.tag","red");
+        // need to start Application book-provider
         bookApi.sale();
         return "success";
     }

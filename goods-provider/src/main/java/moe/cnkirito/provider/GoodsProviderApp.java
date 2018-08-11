@@ -5,8 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author 徐靖峰[OF2938]
- * Date 2018-08-07
+ * @author kirito.moe@foxmail.com
+ * Date 2018-08-03
  */
 @SpringBootApplication
 @DubboComponentScan(basePackages = "moe.cnkirito.provider")

@@ -1,11 +1,15 @@
 package moe.cnkirito.consumer;
 
+import org.apache.dubbo.common.Constants;
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ConsumerConfig;
 import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class DubboConfiguration {
@@ -15,6 +19,9 @@ public class DubboConfiguration {
         ApplicationConfig applicationConfig = new ApplicationConfig();
         applicationConfig.setName("consumer-book");
         applicationConfig.setQosEnable(false);
+        Map<String,String> parameters = new HashMap<>();
+        parameters.put(Constants.ROUTER_KEY, "tag");
+        applicationConfig.setParameters(parameters);
         return applicationConfig;
     }
 
@@ -38,7 +45,6 @@ public class DubboConfiguration {
     public ConsumerConfig consumerConfig(){
         ConsumerConfig consumerConfig = new ConsumerConfig();
         consumerConfig.setCheck(false);
-//        consumerConfig.setRequestTag("yellow");
         return consumerConfig;
     }
 
